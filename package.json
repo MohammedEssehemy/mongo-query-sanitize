@@ -1,0 +1,27 @@
+{
+  "name": "mongo-query-sanitize",
+  "version": "1.0.0",
+  "description": "sanitize mongo queries",
+  "main": "index.js",
+  "dependencies": {
+    "safe-regex": "^2.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MohammedEssehemy/mongo-query-sanitize.git"
+  },
+  "keywords": [
+    "mongo",
+    "sanitize"
+  ],
+  "author": "Mohammed Essehemy <mohammedessehemy@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MohammedEssehemy/mongo-query-sanitize/issues"
+  },
+  "homepage": "https://github.com/MohammedEssehemy/mongo-query-sanitize#readme"
+}
