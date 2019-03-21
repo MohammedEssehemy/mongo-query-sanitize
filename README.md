@@ -1,14 +1,16 @@
+[![Build Status](https://travis-ci.com/MohammedEssehemy/mongo-query-sanitize.svg?branch=master)](https://travis-ci.com/MohammedEssehemy/mongo-query-sanitize)
+
 # Mongo query sanitize
 
 clear mongo query from malicious operators (where) and unsafe regex expressions.
 
-#install
+# install
 
 ```
 npm install mongo-query-sanitize
 ```
 
-#usage 
+# usage 
 
 ```
 const { sanitizeMongoQuery } = require('mongo-query-sanitize');
