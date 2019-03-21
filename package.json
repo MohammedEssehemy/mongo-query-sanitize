@@ -1,14 +1,16 @@
 {
   "name": "mongo-query-sanitize",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "sanitize mongo queries",
   "main": "index.js",
   "dependencies": {
     "safe-regex": "^2.0.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "jest": "^24.5.0"
+  },
   "scripts": {
-    "test": "exit 0"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
