@@ -4,12 +4,8 @@ const options = {
     keys: ['where'],
 }
 
-const isArray = (o) => {
-    return Object.prototype.toString.call(o) === '[object Array]'
-}
-
 const traverse = (key, val, func, parentObj) => {
-    if (isArray(val)) {
+    if (Array.isArray(val)) {
         val.forEach((e, i) => traverse(i, e, func, val));
     } else if (val && (typeof val === 'object') && Object.keys(val).length) {
         Object.keys(val).forEach(k => traverse(k, val[k], func, val));
@@ -24,11 +20,11 @@ const traverseObject = (obj, func) => {
 
 
 const sanitizeMongoQuery = (selector) => {
+    const keyRegex = new RegExp(options.keys.join('|'), 'i');
     traverseObject(selector, (key, val, parentObj) => {
-        let keyRegex = new RegExp(options.keys.join('|'), 'i');
         if (key) {
-            const match = key.match(keyRegex);
-            if (match) throw new Error(`${match.join(',')} operator not allowed`)
+            const match = keyRegex.exec(key);
+            if (match) throw new Error(`${match[0]} operator not allowed`)
         }
         if (
             (/like|regex/i.test(key) || (val instanceof RegExp))
