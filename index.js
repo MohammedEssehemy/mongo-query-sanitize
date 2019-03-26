@@ -31,6 +31,7 @@ const sanitizeMongoQuery = (selector) => {
             && !safeRegex(val)
         ) throw new Error('unsafe regex');
     });
+    return selector;
 }
 
 const setOptions = (requiredOptions) => {
